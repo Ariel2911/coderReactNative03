@@ -1,20 +1,27 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
+import { products } from '../../data/products';
 import {styles} from './styles' 
 
-const ProductDetailsScreen = ({navigation}) => {
+const ProductDetailsScreen = ({ navigation, route }) => {
+  const { productId } = route.params;
+  const product = products.find(product => product.id === productId);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>ProductDetailsScreen</Text>
+      <View style={styles.image} />
       <View>
-        <Text style= {styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</Text>
+        <Text style={styles.description}>{product.description}</Text>
+      </View>
+      <View style={styles.weightAndPrice}>
+        <Text>peso: {product.weight}</Text>
+        <Text>precio: {product.price}</Text>
       </View>
       <View style= {styles.buttons}>
-        <Button title='Home' onPress={() => navigation.navigate('Categories')} />
+        <Button title='Categorias' onPress={() => navigation.navigate('Categories')} />
         <Button title='Volver' onPress={() => navigation.navigate('Products')} />
       </View>
     </View>
   );
-}
+};
 
 export default ProductDetailsScreen;

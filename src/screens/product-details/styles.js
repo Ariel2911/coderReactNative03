@@ -4,18 +4,19 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     paddingHorizontal: 10,
   },  
-  title: {
-    fontFamily: 'Lato-Bold',
-    fontSize: 20,
-    marginVertical: 20,
-  },
-  text: {
+  description: {
     fontFamily: 'Lato-Regular',
-    margin: 20,
+    fontSize: 20,
+    margin: 24,
+  },
+  weightAndPrice: {
+    width: '80%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   buttons: {
     flex: 1,
@@ -26,7 +27,12 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
-
-
-  }
+  },
+  image: {
+    width: '80%',
+    height: '50%',
+    marginTop: 20,
+    backgroundColor: 'blue',
+    color: 'white',
+  },
 });
