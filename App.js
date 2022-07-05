@@ -1,6 +1,8 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
+import { Provider } from 'react-redux';
+import store from './src/store';
 import Root from './src';
 
 export default function App() {
@@ -21,6 +23,8 @@ export default function App() {
     return<ActivityIndicator />;
   }
   return (
-    <Root />
+    <Provider store={store}>  
+      <Root />
+    </Provider>
   );
 }

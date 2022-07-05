@@ -4,7 +4,6 @@ import { colors } from "../../constans/themes/colors";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // height: 90,
     borderColor: colors.secondary,
     borderWidth: 1,
     borderRadius: 6,
